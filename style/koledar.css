@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+
+table.koledar { 
+	width:220px; 
+	margin-top: 18px;     
+	border-collapse:collapse; 
+} 
+
+table.koledar td { 
+	width:30px; 
+	border-collpase:collpase; 
+	text-align: center; 
+	background-color: #FFF;
+} 
+
+table.koledar th { 
+	border-collpase:collpase; 
+	background-color: #F1F3F5;
+} 
+
+table.koledar .actday{ 
+	color: #fff;
+	background-color: #c22; 
+	font-weight:bold; 
+} 
+table.koledar .actday a {
+	color: #fff;
+}
+
+table.koledar .out{ 
+	color: #AAA;
+	background-color: #F5F5F5;
+} 
+
+table.koledar .actdayout{ 
+	color: #AAA;
+	background-color: #F5F5F5;
+	border: 1px dotted #5F5F5F;
+	font-weight: bold;
+} 

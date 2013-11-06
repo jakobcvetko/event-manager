@@ -1,0 +1,16 @@
+Options +FollowSymlinks
+
+DirectoryIndex login.php
+
+RewriteEngine on
+
+RewriteRule ^login$ login.php [QSA,L]
+
+# If requested directory, folder or list exists, stop rewrite
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+# Rewriting request to masterpage with page attribut
+# QSA -> Query String Append
+RewriteRule ^(.*)$ masterpage.php?page=$1 [QSA,L]
