@@ -357,10 +357,10 @@ INSERT INTO `uporabniki` VALUES ('3', 'lol', 'lol', 'lol@lol.com', 'nniicc', '40
 -- View structure for `dogodki_view`
 -- ----------------------------
 DROP VIEW IF EXISTS `dogodki_view`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `dogodki_view` AS select `d`.`id` AS `id`,`d`.`organizator_id` AS `organizator_id`,`d`.`naziv` AS `naziv`,`d`.`kraj` AS `kraj`,`d`.`drzava` AS `drzava`,`d`.`opomba` AS `opomba`,`d`.`javni` AS `javni`,`u`.`up_ime` AS `up_ime` from (`dogodki` `d` join `uporabniki` `u`) where (`d`.`organizator_id` = `u`.`id`) ;
+CREATE VIEW `dogodki_view` AS select `d`.`id` AS `id`,`d`.`organizator_id` AS `organizator_id`,`d`.`naziv` AS `naziv`,`d`.`kraj` AS `kraj`,`d`.`drzava` AS `drzava`,`d`.`opomba` AS `opomba`,`d`.`javni` AS `javni`,`u`.`up_ime` AS `up_ime` from (`dogodki` `d` join `uporabniki` `u`) where (`d`.`organizator_id` = `u`.`id`) ;
 
 -- ----------------------------
 -- View structure for `termini_view`
 -- ----------------------------
 DROP VIEW IF EXISTS `termini_view`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `termini_view` AS select `t`.`id` AS `termin_id`,`t`.`datum` AS `datum`,`t`.`cas` AS `cas`,`d`.`id` AS `dogodek_id`,`d`.`naziv` AS `naziv`,`u`.`id` AS `organizator_id`,`u`.`up_ime` AS `up_ime` from ((`termini_dog` `t` join `dogodki` `d`) join `uporabniki` `u`) where ((`t`.`dogodek_id` = `d`.`id`) and (`d`.`organizator_id` = `u`.`id`)) order by `t`.`datum` ;
+CREATE VIEW `termini_view` AS select `t`.`id` AS `termin_id`,`t`.`datum` AS `datum`,`t`.`cas` AS `cas`,`d`.`id` AS `dogodek_id`,`d`.`naziv` AS `naziv`,`u`.`id` AS `organizator_id`,`u`.`up_ime` AS `up_ime` from ((`termini_dog` `t` join `dogodki` `d`) join `uporabniki` `u`) where ((`t`.`dogodek_id` = `d`.`id`) and (`d`.`organizator_id` = `u`.`id`)) order by `t`.`datum` ;
