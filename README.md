@@ -5,4 +5,4 @@ Event Manager is a school website project built in PHP, that manages your own pe
 
 Accessible on heroku: [http://event-manager-si.herokuapp.com](http://event-manager-si.herokuapp.com) (Login as admin/admin)
 
-View on Github pages: [http://jakobboss.github.io/event-manager](http://jakobboss.github.io/event-manager)
+View on Github pages: [http://jakobcvetko.github.io/event-manager](http://jakobcvetko.github.io/event-manager)
